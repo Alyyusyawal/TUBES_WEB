@@ -124,10 +124,10 @@
               <div class="col-3 bordered">
                 <div class="row bordered ">                
                   <div class="card text-center">
-                    <div class="card-header">
+                    <div class="card-header" style="background-color: rgb(119, 186, 250)">
                       <h2>Kalender</h2>
                     </div>
-                    <div class="card-body">
+                    <div class="card-body" style="background-color: rgb(255, 255, 251)">
                       
                       <iframe src="https://calendar.google.com/calendar/embed?src=example%40gmail.com&ctz=America%2FNew_York" style="border: 0" width="100%" height="300" frameborder="0" scrolling="no"></iframe>
 
@@ -139,10 +139,10 @@
                 
                 <div class="row bordered">
                   <div class="card text-center">
-                    <div class="card-header">
+                    <div class="card-header" style="background-color: rgb(119, 186, 250)">
                       <h2>helpdesk</h2>
                     </div>
-                    <div class="card-body">
+                    <div class="card-body" style="background-color: rgb(255, 255, 251)">
                       <ul>
                         <li>List item 1</li>
                         <li>List item 2</li>
@@ -159,7 +159,7 @@
               <div class="col-3 bordered">
                 <div class="row bordered" rowspan="2">
                   <div class="card text-center">
-                    <div class="card-header">
+                    <div class="card-header" style="background-color: rgb(119, 186, 250)">>
                       <h2>Panduan</h2>
                     </div>
                     <div class="card-body">
