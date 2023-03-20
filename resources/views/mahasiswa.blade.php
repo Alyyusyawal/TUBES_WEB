@@ -8,8 +8,8 @@
                 <div class="card">
                 <div class="card text-center">
                     <div class="card-header">
-                        
-                        <h1>Mata Kuliah</h1>
+                    <h1>Halaman Mahasiswa</h1>       
+                    <h1>Mata Kuliah</h1>
                     </div>
                     <a href="{{ url('presensi') }}" class="btn btn-primary" tabindex="-1" role="button" aria-pressed="true">Matematika Komputer</a>
                     <a href="{{ url('presensi') }}" class="btn btn-primary" tabindex="-1" role="button" aria-pressed="true">Komunikasi Data</a>
