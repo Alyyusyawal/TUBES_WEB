@@ -20,6 +20,7 @@ Auth::routes();
 Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::get('admin', function () { return view('admin'); })->middleware('chekRole:Admin');
 Route::get('dosen', function () { return view('dosen'); })->middleware(['chekRole:Dosen,Admin']);
+Route::get('presensi', function(){return view('presensi');})->middleware(['chekRole:Mahasiswa,Dosen']);
 // Route::get('mahasiswa', function () { return view('mahasiswa'); })->middleware(['chekRole:Mahasiswa,Admin']);
 // Route::middleware('auth')->group(function () {
 //     Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

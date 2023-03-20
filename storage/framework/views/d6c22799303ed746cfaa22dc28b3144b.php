@@ -52,7 +52,7 @@
         <nav class="navbar navbar-expand-md navbar-light shadow-md" style="background-color: rgb(0, 55, 99)">
             <div class="container">
                 <a class="navbar-brand" href="<?php echo e(url('/')); ?>" style="color:honeydew">
-                    LOGO
+                    Check Profile
                 </a>
                 <?php if(auth()->guard()->check()): ?>
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0" >

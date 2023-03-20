@@ -9,19 +9,10 @@
                         
                         <h1>Mata Kuliah</h1>
                     </div>
-                    <div class="card-body">
-                        <h5 class="card-title"><button href="">Matematika Komputer</button></h5>
-                    </div>
-                    <div class="card-body">
-                        <h5 class="card-title"><li href="#">Pemrogramana Web</li></h5>
-                    </div>
-                    <div class="card-body">
-                        <h5 class="card-title"><li href="#">Struktur Data</li></h5>
-                    </div>
-                    <div class="card-body">
-                        <h5 class="card-title"><li href="#">Komunikasi Data</li></h5>
-                    </div>
-
+                    <a href="<?php echo e(url('presensi')); ?>" class="btn btn-primary" tabindex="-1" role="button" aria-pressed="true">Matematika Komputer</a>
+                    <a href="<?php echo e(url('presensi')); ?>" class="btn btn-primary" tabindex="-1" role="button" aria-pressed="true">Komunikasi Data</a>
+                    <a href="<?php echo e(url('presensi')); ?>" class="btn btn-primary" tabindex="-1" role="button" aria-pressed="true">Pemrograman Web</a>
+                    <a href="<?php echo e(url('presensi')); ?>" class="btn btn-primary" tabindex="-1" role="button" aria-pressed="true">Probabilitas dan Stastika</a>
                     </div>
     
                 </div>
