@@ -9,15 +9,11 @@
 
     <title>{{ config('app.name', 'Laravel') }}</title>
     <link href="{{ asset('assets/css/bootstrap.min.css') }}" rel="stylesheet" >
-
-    <link href="{{ asset('css/fullcalendar.min.css') }}" rel="stylesheet">
-    
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.bunny.net/css?family=Nunito" rel="stylesheet">
 
     <!-- Scripts -->
-    <script src="{{ asset('js/fullcalendar.min.js') }}"></script>
     @vite(['resources/sass/app.scss', 'resources/js/app.js'])
 </head>
 <body>
@@ -27,12 +23,12 @@
             bottom:0;
             width:100%;
             height:60px;   /* tinggi dari footer */
-            background: blue;
+            background: rgb(0, 90, 139);
             
         }
-        .bordered{
+        /* .bordered{
           border : solid 1px;
-        }
+        } */
         .row-c{
             /* Center vertically and horizontally */
           position: absolute;
@@ -53,21 +49,21 @@
     </style>
 
     <div id="app">
-        <nav class="navbar navbar-expand-md navbar-light bg-primary shadow-sm">
+        <nav class="navbar navbar-expand-md navbar-light shadow-md" style="background-color: rgb(0, 55, 99)">
             <div class="container">
-                <a class="navbar-brand" href="{{ url('/') }}">
+                <a class="navbar-brand" href="{{ url('/') }}" style="color:honeydew">
                     LOGO
                 </a>
                 @auth
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0" >
                         <li class="nav-item">
-                            <a class="nav-link" aria-current="page" href="{{url('admin')}}">Halaman Admin</a>
+                            <a class="nav-link" aria-current="page" href="{{url('admin')}}" style="color:honeydew">Halaman Admin</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{{url('dosen')}}">Halaman Dosen</a>
+                            <a class="nav-link" href="{{url('dosen')}}" style="color:honeydew">Halaman Dosen</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{{url('mahasiswa')}}">Halaman Mahasiswa</a>
+                            <a class="nav-link" href="{{url('mahasiswa')}}" style="color:honeydew">Halaman Mahasiswa</a>
                         </li>
                     </ul>
 
@@ -88,22 +84,22 @@
                         @guest
                             @if (Route::has('login'))
                                 <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
+                                    <a class="nav-link" href="{{ route('login') }}"style="color:honeydew">{{ __('Login') }} </a>
                                 </li>
                             @endif
 
                             @if (Route::has('register'))
                                 <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
+                                    <a class="nav-link" href="{{ route('register') }}"style="color:honeydew">{{ __('Register') }}</a>
                                 </li>
                             @endif
                         @else
                             <li class="nav-item dropdown">
-                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre style="color:honeydew">
                                     {{ Auth::user()->name }}
                                 </a>
 
-                                <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                                <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown" style="color:honeydew">
                                     <a class="dropdown-item" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
@@ -121,7 +117,7 @@
             </div>
         </nav>
 
-        <main class="py-4">
+        <main class="py-4" style="background-image: linear-gradient(to top, rgb(0, 90, 139), rgb(208, 231, 255)); height:87vh">
             <div class="row bordered align-items-center" >
               <div class="col-3 bordered">
                 <div class="row bordered ">                
@@ -170,50 +166,17 @@
                         <li>List item 2</li>
                         <li>List item 3</li></div>
                     </div>
-                    
                       
                   </div>
                   
               </div>
             </div>  
-            {{-- <div class="row">
-              <!--Kalender-->  
-              <div class="col-md-2">
-                <h2>Kalender</h2>
-                <iframe src="https://calendar.google.com/calendar/embed?src=example%40gmail.com&ctz=America%2FNew_York" style="border: 0" width="100%" height="600" frameborder="0" scrolling="no"></iframe>
-              </div>
-              <!--konten-->
-              <div class="col-8" rowspan="2">@yield('content')</div>
-              </div>
-              <!--panduan-->
-              <div class="col-2" rowspan="2">  
-                <h2>Panduan</h2>
-                <ul>
-                <li>List item 1</li>
-                <li>List item 2</li>
-                <li>List item 3</li>
-              </ul>
-            </div>
-            </div>
-            <div class="row">
-                <div class="col-6 col-md-4"></div>
-                <div class="col-6 col-md-4"></div>
-                <!--helpdesk-->
-                <div class="col-6 col-md-4">
-                    <ul>
-                    <h2>helpdesk</h2>
-                      <li>List item 1</li>
-                      <li>List item 2</li>
-                      <li>List item 3</li>
-                    </ul>
-            </div> --}}
           </main>
           
     </div>
     <div class="footer">
         <div class="text-center p-3" style="background-color: rgba(255, 255, 255, 0.2);">
-        © 2023 Copyright:
-        <a class="text-dark">Kelompok 8</a>
+        <a class="text-light">© 2023 Copyright: Kelompok 8</a>
         </div>
     </div>
 </body>

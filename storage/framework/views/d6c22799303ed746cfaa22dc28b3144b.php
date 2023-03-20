@@ -9,15 +9,11 @@
 
     <title><?php echo e(config('app.name', 'Laravel')); ?></title>
     <link href="<?php echo e(asset('assets/css/bootstrap.min.css')); ?>" rel="stylesheet" >
-
-    <link href="<?php echo e(asset('css/fullcalendar.min.css')); ?>" rel="stylesheet">
-    
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.bunny.net/css?family=Nunito" rel="stylesheet">
 
     <!-- Scripts -->
-    <script src="<?php echo e(asset('js/fullcalendar.min.js')); ?>"></script>
     <?php echo app('Illuminate\Foundation\Vite')(['resources/sass/app.scss', 'resources/js/app.js']); ?>
 </head>
 <body>
@@ -27,12 +23,12 @@
             bottom:0;
             width:100%;
             height:60px;   /* tinggi dari footer */
-            background: blue;
+            background: rgb(0, 90, 139);
             
         }
-        .bordered{
+        /* .bordered{
           border : solid 1px;
-        }
+        } */
         .row-c{
             /* Center vertically and horizontally */
           position: absolute;
@@ -53,21 +49,21 @@
     </style>
 
     <div id="app">
-        <nav class="navbar navbar-expand-md navbar-light bg-primary shadow-sm">
+        <nav class="navbar navbar-expand-md navbar-light shadow-md" style="background-color: rgb(0, 55, 99)">
             <div class="container">
-                <a class="navbar-brand" href="<?php echo e(url('/')); ?>">
+                <a class="navbar-brand" href="<?php echo e(url('/')); ?>" style="color:honeydew">
                     LOGO
                 </a>
                 <?php if(auth()->guard()->check()): ?>
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0" >
                         <li class="nav-item">
-                            <a class="nav-link" aria-current="page" href="<?php echo e(url('admin')); ?>">Halaman Admin</a>
+                            <a class="nav-link" aria-current="page" href="<?php echo e(url('admin')); ?>" style="color:honeydew">Halaman Admin</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="<?php echo e(url('dosen')); ?>">Halaman Dosen</a>
+                            <a class="nav-link" href="<?php echo e(url('dosen')); ?>" style="color:honeydew">Halaman Dosen</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="<?php echo e(url('mahasiswa')); ?>">Halaman Mahasiswa</a>
+                            <a class="nav-link" href="<?php echo e(url('mahasiswa')); ?>" style="color:honeydew">Halaman Mahasiswa</a>
                         </li>
                     </ul>
 
@@ -88,23 +84,23 @@
                         <?php if(auth()->guard()->guest()): ?>
                             <?php if(Route::has('login')): ?>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="<?php echo e(route('login')); ?>"><?php echo e(__('Login')); ?></a>
+                                    <a class="nav-link" href="<?php echo e(route('login')); ?>"style="color:honeydew"><?php echo e(__('Login')); ?> </a>
                                 </li>
                             <?php endif; ?>
 
                             <?php if(Route::has('register')): ?>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="<?php echo e(route('register')); ?>"><?php echo e(__('Register')); ?></a>
+                                    <a class="nav-link" href="<?php echo e(route('register')); ?>"style="color:honeydew"><?php echo e(__('Register')); ?></a>
                                 </li>
                             <?php endif; ?>
                         <?php else: ?>
                             <li class="nav-item dropdown">
-                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre style="color:honeydew">
                                     <?php echo e(Auth::user()->name); ?>
 
                                 </a>
 
-                                <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                                <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown" style="color:honeydew">
                                     <a class="dropdown-item" href="<?php echo e(route('logout')); ?>"
                                        onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
@@ -123,7 +119,7 @@
             </div>
         </nav>
 
-        <main class="py-4">
+        <main class="py-4" style="background-image: linear-gradient(to top, rgb(0, 90, 139), rgb(208, 231, 255)); height:87vh">
             <div class="row bordered align-items-center" >
               <div class="col-3 bordered">
                 <div class="row bordered ">                
@@ -172,20 +168,17 @@
                         <li>List item 2</li>
                         <li>List item 3</li></div>
                     </div>
-                    
                       
                   </div>
                   
               </div>
             </div>  
-            
           </main>
           
     </div>
     <div class="footer">
         <div class="text-center p-3" style="background-color: rgba(255, 255, 255, 0.2);">
-        © 2023 Copyright:
-        <a class="text-dark">Kelompok 8</a>
+        <a class="text-light">© 2023 Copyright: Kelompok 8</a>
         </div>
     </div>
 </body>
