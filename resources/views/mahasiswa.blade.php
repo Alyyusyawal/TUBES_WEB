@@ -9,14 +9,21 @@
                 <div class="card text-center">
                     <div class="card-header">
                         
-                        <h1>Data Mahasiswa</h1>
+                        <h1>Mata Kuliah</h1>
                     </div>
-                    @foreach($data as $datas)
                     <div class="card-body">
-                        <h5 class="card-title"><li>{{$datas}}</li></h5>
+                        <h5 class="card-title"><button href="">Matematika Komputer</button></h5>
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title"><li href="#">Pemrogramana Web</li></h5>
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title"><li href="#">Struktur Data</li></h5>
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title"><li href="#">Komunikasi Data</li></h5>
                     </div>
 
-                    @endforeach
                     </div>
     
                 </div>

@@ -7,14 +7,21 @@
                 <div class="card text-center">
                     <div class="card-header">
                         
-                        <h1>Data Mahasiswa</h1>
+                        <h1>Mata Kuliah</h1>
                     </div>
-                    <?php $__currentLoopData = $data; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $datas): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                     <div class="card-body">
-                        <h5 class="card-title"><li><?php echo e($datas); ?></li></h5>
+                        <h5 class="card-title"><button href="">Matematika Komputer</button></h5>
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title"><li href="#">Pemrogramana Web</li></h5>
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title"><li href="#">Struktur Data</li></h5>
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title"><li href="#">Komunikasi Data</li></h5>
                     </div>
 
-                    <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                     </div>
     
                 </div>

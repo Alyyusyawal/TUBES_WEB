@@ -117,60 +117,54 @@
             </div>
         </nav>
 
-        <main class="py-4" style="background-image: linear-gradient(to top, rgb(0, 90, 139), rgb(208, 231, 255)); height:87vh">
-            <div class="row bordered align-items-center" >
-              <div class="col-3 bordered">
-                <div class="row bordered ">                
-                  <div class="card text-center">
-                    <div class="card-header" style="background-color: rgb(119, 186, 250)">
-                      <h2>Kalender</h2>
-                    </div>
-                    <div class="card-body" style="background-color: rgb(255, 255, 251)">
-                      
+        <main class="py-4" style="background-image: linear-gradient(to top, rgb(0, 90, 139), rgb(208, 231, 255)); height:90vh">
+            <div class="container">
+              <div class="row">
+                <div class="col-lg-3 mb-4">
+                  <div class="card border-0 shadow-sm">
+                    <div class="card-body text-center">
+                      <h2 class="card-title mb-4">Kalender</h2>
                       <iframe src="https://calendar.google.com/calendar/embed?src=example%40gmail.com&ctz=America%2FNew_York" style="border: 0" width="100%" height="300" frameborder="0" scrolling="no"></iframe>
-
                     </div>
-                    
                   </div>
-                  
-                </div>
-                
-                <div class="row bordered">
-                  <div class="card text-center">
-                    <div class="card-header" style="background-color: rgb(119, 186, 250)">
-                      <h2>helpdesk</h2>
-                    </div>
-                    <div class="card-body" style="background-color: rgb(255, 255, 251)">
-                      <ul>
-                        <li>List item 1</li>
-                        <li>List item 2</li>
-                        <li>List item 3</li>
-                        <li>List item 3</li>
+                  <div class="card border-0 shadow-sm mt-4">
+                    <div class="card-body">
+                      <h2 class="card-title mb-4">Helpdesk</h2>
+                      <ul class="list-unstyled mb-0">
+                        <li class="mb-2"><a href="#">Helpdesk FIP</a></li>
+                        <li class="mb-2"><a href="#">Helpdesk Teknik</a></li>
+                        <li class="mb-2"><a href="#">Helpdesk FIP</a></li>
+                        <li class="mb-2"><a href="#">Helpdesk FE</a></li>
                       </ul>
                     </div>
                   </div>
                 </div>
-              </div>
-              <div class="col-6 bordered">
-                <div class="row bordered " rowspan="2" style="justify-content:center; height=100%">@yield('content')</div>
-              </div>
+                <div class="col-lg-6 mb-4">
+                  <div class="card border-0 shadow-sm">
+                    <div class="card-body">
+                      @yield('content')
+                    </div>
+                  </div>
+                </div>
               <div class="col-3 bordered">
-                <div class="row bordered" rowspan="2">
+                <div class="row bordered">
                   <div class="card text-center">
-                    <div class="card-header" style="background-color: rgb(119, 186, 250)">>
+                    <div class="card-header">
                       <h2>Panduan</h2>
                     </div>
                     <div class="card-body">
-                      <ul>
-                        <li>List item 1</li>
-                        <li>List item 2</li>
-                        <li>List item 3</li></div>
-                    </div>
-                      
+                      <ul class="list-unstyled">
+                          <li class="mb-2"><a href="#">Tenatang kami </a></li>
+                          <li class="mb-2"><a href="#">Panduan Dosen</a></li>
+                          <li class="mb-2"><a href="#">Panduan Mahasiswa</a></li>
+                          <li class="mb-2"><a href="#">Q & A</a></li>
+                      </ul>
+                    </div>  
                   </div>
-                  
+                </div>
               </div>
-            </div>  
+            </div>
+            
           </main>
           
     </div>
