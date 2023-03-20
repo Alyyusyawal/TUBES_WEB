@@ -133,15 +133,23 @@
                     
                   </div>
                   
-                                  </div>
+                </div>
+                
                 <div class="row bordered">
-                <ul>
-                  <h2>helpdesk</h2>
-                    <li>List item 1</li>
-                    <li>List item 2</li>
-                    <li>List item 3</li>
-                    <li>List item 3</li>
-                  </ul></div>
+                  <div class="card text-center">
+                    <div class="card-header">
+                      <h2>helpdesk</h2>
+                    </div>
+                    <div class="card-body">
+                      <ul>
+                        <li>List item 1</li>
+                        <li>List item 2</li>
+                        <li>List item 3</li>
+                        <li>List item 3</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
               </div>
               <div class="col-6 bordered">
                 <div class="row bordered " rowspan="2" style="justify-content:center; height=100%">@yield('content')</div>
