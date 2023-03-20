@@ -10,12 +10,14 @@
     <title>{{ config('app.name', 'Laravel') }}</title>
     <link href="{{ asset('assets/css/bootstrap.min.css') }}" rel="stylesheet" >
 
-
+    <link href="{{ asset('css/fullcalendar.min.css') }}" rel="stylesheet">
+    
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.bunny.net/css?family=Nunito" rel="stylesheet">
 
     <!-- Scripts -->
+    <script src="{{ asset('js/fullcalendar.min.js') }}"></script>
     @vite(['resources/sass/app.scss', 'resources/js/app.js'])
 </head>
 <body>
@@ -46,6 +48,8 @@
           left: 20%;
       
         }
+        
+        
     </style>
 
     <div id="app">

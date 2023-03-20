@@ -10,12 +10,14 @@
     <title><?php echo e(config('app.name', 'Laravel')); ?></title>
     <link href="<?php echo e(asset('assets/css/bootstrap.min.css')); ?>" rel="stylesheet" >
 
-
+    <link href="<?php echo e(asset('css/fullcalendar.min.css')); ?>" rel="stylesheet">
+    
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.bunny.net/css?family=Nunito" rel="stylesheet">
 
     <!-- Scripts -->
+    <script src="<?php echo e(asset('js/fullcalendar.min.js')); ?>"></script>
     <?php echo app('Illuminate\Foundation\Vite')(['resources/sass/app.scss', 'resources/js/app.js']); ?>
 </head>
 <body>
@@ -46,6 +48,8 @@
           left: 20%;
       
         }
+        
+        
     </style>
 
     <div id="app">
