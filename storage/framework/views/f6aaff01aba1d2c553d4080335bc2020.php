@@ -34,7 +34,7 @@
                 <tr>
                   <th><?php echo e($loop->iteration); ?></th>
                   <td><?php echo e($admin->nim); ?></td>
-                  <td><?php echo e($admin->name); ?></td>
+                  <td><?php echo e($admin->nama); ?></td>
                   <td><?php echo e($admin->email); ?></td>
                   <td><?php echo e($admin->role); ?></td>
                   <td>

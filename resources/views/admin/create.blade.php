@@ -5,20 +5,18 @@
   <div class="row">
     <div class="col-md-8 col-xl-6">
       <h1>Pembuatan admin</h1>
-      <hr>
-
       <form action="{{ route('admins.store') }}" method="POST">
         @csrf
         <div class="form-group">
           <label for="nama">Nama</label>
-          <input type="text" class="form-control @error('nama') is-invalid @enderror" id="nama" nama="nama" value="{{ old('nama') }}">
+          <input type="text" class="form-control @error('nama') is-invalid @enderror" id="nama" name="nama" value="{{ old('nama') }}">
           @error('nama')
             <div class="text-danger">{{ $message }}</div>
           @enderror
         </div>
         <div class="form-group">
           <label for="NIM">NIM</label>
-          <input type="text" class="form-control @error('NIM') is-invalid @enderror" id="NIM" NIM="NIM" value="{{ old('NIM') }}">
+          <input type="text" class="form-control @error('NIM') is-invalid @enderror" id="NIM" name="NIM" value="{{ old('NIM') }}">
           @error('NIM')
             <div class="text-danger">{{ $message }}</div>
           @enderror

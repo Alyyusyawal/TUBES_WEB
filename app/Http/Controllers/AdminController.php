@@ -43,7 +43,7 @@ class AdminController extends Controller
     {
         return view('admin.edit',['signup' => $signup]);
     }
-
+    
     public function update(Request $request, Signup $signup)
     {
         $validateData = $request->validate([
@@ -53,11 +53,12 @@ class AdminController extends Controller
             'password'      => 'required|min:6',
             'role'          => 'required',
         ]);
-
+    
         $signup->update($validateData);
         return redirect()->route('admins.show',['signup'=>$signup->id])
             ->with('pesan',"Update data {$validateData['nama']} berhasil ");
     }
+    
 
     public function destroy(Signup $signup)
     {
