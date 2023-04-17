@@ -30,16 +30,16 @@
                 </tr>
               </thead>
               <tbody>
-                <?php $__empty_1 = true; $__currentLoopData = $signups; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $admin): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); $__empty_1 = false; ?>
+                <?php $__empty_1 = true; $__currentLoopData = $signups; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $signup): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); $__empty_1 = false; ?>
                 <tr>
                   <th><?php echo e($loop->iteration); ?></th>
-                  <td><?php echo e($admin->nim); ?></td>
-                  <td><?php echo e($admin->nama); ?></td>
-                  <td><?php echo e($admin->email); ?></td>
-                  <td><?php echo e($admin->role); ?></td>
+                  <td><?php echo e($signup->nim); ?></td>
+                  <td><?php echo e($signup->nama); ?></td>
+                  <td><?php echo e($signup->email); ?></td>
+                  <td><?php echo e($signup->role); ?></td>
                   <td>
-                    <a href="<?php echo e(route('admins.edit', $admin->id)); ?>" class="btn btn-sm btn-warning">Edit</a>
-                    <form action="<?php echo e(route('admins.destroy', $admin->id)); ?>" method="POST" class="d-inline">
+                    <a href="<?php echo e(route('admins.edit', $signup->id)); ?>" class="btn btn-sm btn-warning">Edit</a>
+                    <form action="<?php echo e(route('admins.destroy', $signup->id)); ?>" method="POST" class="d-inline">
                       <?php echo csrf_field(); ?>
                       <?php echo method_field('DELETE'); ?>
                       <button type="submit" class="btn btn-sm btn-danger" onclick="return confirm('Anda yakin ingin menghapus admin ini?')">Hapus</button>

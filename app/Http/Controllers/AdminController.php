@@ -55,7 +55,7 @@ class AdminController extends Controller
         ]);
     
         $signup->update($validateData);
-        return redirect()->route('admins.show',['signup'=>$signup->id])
+        return redirect()->route('admins.index',['signup'=>$signup->id])
             ->with('pesan',"Update data {$validateData['nama']} berhasil ");
     }
     

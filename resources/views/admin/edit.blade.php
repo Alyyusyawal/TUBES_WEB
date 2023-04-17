@@ -7,7 +7,7 @@
     <div class="col-md-8 col-xl-6">
       <h1>Edit</h1>
 
-      <form action="{{ route('admins.update', ['signup'=>$signups->id]) }}" method="POST">
+      <form action="{{ route('admins.update', ['signup'=>$signup->id]) }}" method="POST">
         @method('PATCH')
         @csrf
       
@@ -16,7 +16,7 @@
           <input type="text"
                  class="form-control @error('nama') is-invalid @enderror"
                  id="nama" name="nama"
-                 value="{{ old('nama') ?? $signups->nama }}">
+                 value="{{ old('nama') ?? $signup->nama }}">
           @error('nama')
             <div class="text-danger">{{ $message }}</div>
           @enderror
@@ -27,7 +27,7 @@
           <input type="text"
                  class="form-control @error('NIM') is-invalid @enderror"
                  id="NIM" name="NIM"
-                 value="{{ old('NIM') ?? $signups->NIM }}">
+                 value="{{ old('NIM') ?? $signup->NIM }}">
           @error('NIM')
             <div class="text-danger">{{ $message }}</div>
           @enderror
@@ -38,8 +38,17 @@
           <input type="email"
                  class="form-control @error('email') is-invalid @enderror"
                  id="email" name="email"
-                 value="{{ old('email') ?? $signups->email }}">
+                 value="{{ old('email') ?? $signup->email }}">
           @error('email')
+            <div class="text-danger">{{ $message }}</div>
+          @enderror
+        </div>
+
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input type="password" class="form-control @error('password') is-invalid @enderror" id="password" name="password"
+          value="{{ old('password') ?? $signup->password }}">
+          @error('password')
             <div class="text-danger">{{ $message }}</div>
           @enderror
         </div>
@@ -48,15 +57,15 @@
           <label>Role</label>
           <div>
             <div class="form-check form-check-inline">
-              <input class="form-check-input" type="radio" name="role" id="admin" value="admin" {{ old('role') == 'admin' || $signups->role == 'admin' ? 'checked' : '' }}>
+              <input class="form-check-input" type="radio" name="role" id="admin" value="admin" {{ old('role') == 'admin' || $signup->role == 'admin' ? 'checked' : '' }}>
               <label class="form-check-label" for="admin">Admin</label>
             </div>
             <div class="form-check form-check-inline">
-              <input class="form-check-input" type="radio" name="role" id="student" value="student" {{ old('role') == 'student' || $signups->role == 'student' ? 'checked' : '' }}>
+              <input class="form-check-input" type="radio" name="role" id="student" value="student" {{ old('role') == 'student' || $signup->role == 'student' ? 'checked' : '' }}>
               <label class="form-check-label" for="student">Student</label>
             </div>
             <div class="form-check form-check-inline">
-              <input class="form-check-input" type="radio" name="role" id="lecture" value="lecture" {{ old('role') == 'lecture' || $signups->role == 'lecture' ? 'checked' : '' }}>
+              <input class="form-check-input" type="radio" name="role" id="lecture" value="lecture" {{ old('role') == 'lecture' || $signup->role == 'lecture' ? 'checked' : '' }}>
               <label class="form-check-label" for="lecture">Lecture</label>
             </div>
             @error('role')

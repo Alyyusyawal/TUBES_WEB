@@ -7,7 +7,7 @@
     <div class="col-md-8 col-xl-6">
       <h1>Edit</h1>
 
-      <form action="<?php echo e(route('admins.update', ['signup'=>$signups->id])); ?>" method="POST">
+      <form action="<?php echo e(route('admins.update', ['signup'=>$signup->id])); ?>" method="POST">
         <?php echo method_field('PATCH'); ?>
         <?php echo csrf_field(); ?>
       
@@ -23,7 +23,7 @@ if (isset($__messageOriginal)) { $message = $__messageOriginal; }
 endif;
 unset($__errorArgs, $__bag); ?>"
                  id="nama" name="nama"
-                 value="<?php echo e(old('nama') ?? $signups->nama); ?>">
+                 value="<?php echo e(old('nama') ?? $signup->nama); ?>">
           <?php $__errorArgs = ['nama'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
 if ($__bag->has($__errorArgs[0])) :
@@ -48,7 +48,7 @@ if (isset($__messageOriginal)) { $message = $__messageOriginal; }
 endif;
 unset($__errorArgs, $__bag); ?>"
                  id="NIM" name="NIM"
-                 value="<?php echo e(old('NIM') ?? $signups->NIM); ?>">
+                 value="<?php echo e(old('NIM') ?? $signup->NIM); ?>">
           <?php $__errorArgs = ['NIM'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
 if ($__bag->has($__errorArgs[0])) :
@@ -73,8 +73,31 @@ if (isset($__messageOriginal)) { $message = $__messageOriginal; }
 endif;
 unset($__errorArgs, $__bag); ?>"
                  id="email" name="email"
-                 value="<?php echo e(old('email') ?? $signups->email); ?>">
+                 value="<?php echo e(old('email') ?? $signup->email); ?>">
           <?php $__errorArgs = ['email'];
+$__bag = $errors->getBag($__errorArgs[1] ?? 'default');
+if ($__bag->has($__errorArgs[0])) :
+if (isset($message)) { $__messageOriginal = $message; }
+$message = $__bag->first($__errorArgs[0]); ?>
+            <div class="text-danger"><?php echo e($message); ?></div>
+          <?php unset($message);
+if (isset($__messageOriginal)) { $message = $__messageOriginal; }
+endif;
+unset($__errorArgs, $__bag); ?>
+        </div>
+
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input type="password" class="form-control <?php $__errorArgs = ['password'];
+$__bag = $errors->getBag($__errorArgs[1] ?? 'default');
+if ($__bag->has($__errorArgs[0])) :
+if (isset($message)) { $__messageOriginal = $message; }
+$message = $__bag->first($__errorArgs[0]); ?> is-invalid <?php unset($message);
+if (isset($__messageOriginal)) { $message = $__messageOriginal; }
+endif;
+unset($__errorArgs, $__bag); ?>" id="password" name="password"
+          value="<?php echo e(old('password') ?? $signup->password); ?>">
+          <?php $__errorArgs = ['password'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
 if ($__bag->has($__errorArgs[0])) :
 if (isset($message)) { $__messageOriginal = $message; }
@@ -90,15 +113,15 @@ unset($__errorArgs, $__bag); ?>
           <label>Role</label>
           <div>
             <div class="form-check form-check-inline">
-              <input class="form-check-input" type="radio" name="role" id="admin" value="admin" <?php echo e(old('role') == 'admin' || $signups->role == 'admin' ? 'checked' : ''); ?>>
+              <input class="form-check-input" type="radio" name="role" id="admin" value="admin" <?php echo e(old('role') == 'admin' || $signup->role == 'admin' ? 'checked' : ''); ?>>
               <label class="form-check-label" for="admin">Admin</label>
             </div>
             <div class="form-check form-check-inline">
-              <input class="form-check-input" type="radio" name="role" id="student" value="student" <?php echo e(old('role') == 'student' || $signups->role == 'student' ? 'checked' : ''); ?>>
+              <input class="form-check-input" type="radio" name="role" id="student" value="student" <?php echo e(old('role') == 'student' || $signup->role == 'student' ? 'checked' : ''); ?>>
               <label class="form-check-label" for="student">Student</label>
             </div>
             <div class="form-check form-check-inline">
-              <input class="form-check-input" type="radio" name="role" id="lecture" value="lecture" <?php echo e(old('role') == 'lecture' || $signups->role == 'lecture' ? 'checked' : ''); ?>>
+              <input class="form-check-input" type="radio" name="role" id="lecture" value="lecture" <?php echo e(old('role') == 'lecture' || $signup->role == 'lecture' ? 'checked' : ''); ?>>
               <label class="form-check-label" for="lecture">Lecture</label>
             </div>
             <?php $__errorArgs = ['role'];

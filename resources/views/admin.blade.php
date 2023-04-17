@@ -54,16 +54,16 @@
                 </tr>
               </thead>
               <tbody>
-                @forelse ($signups as $admin)
+                @forelse ($signups as $signup)
                 <tr>
                   <th>{{ $loop->iteration }}</th>
-                  <td>{{ $admin->nim }}</td>
-                  <td>{{ $admin->nama }}</td>
-                  <td>{{ $admin->email }}</td>
-                  <td>{{ $admin->role }}</td>
+                  <td>{{ $signup->nim }}</td>
+                  <td>{{ $signup->nama }}</td>
+                  <td>{{ $signup->email }}</td>
+                  <td>{{ $signup->role }}</td>
                   <td>
-                    <a href="{{ route('admins.edit', $admin->id) }}" class="btn btn-sm btn-warning">Edit</a>
-                    <form action="{{ route('admins.destroy', $admin->id) }}" method="POST" class="d-inline">
+                    <a href="{{ route('admins.edit', $signup->id) }}" class="btn btn-sm btn-warning">Edit</a>
+                    <form action="{{ route('admins.destroy', $signup->id) }}" method="POST" class="d-inline">
                       @csrf
                       @method('DELETE')
                       <button type="submit" class="btn btn-sm btn-danger" onclick="return confirm('Anda yakin ingin menghapus admin ini?')">Hapus</button>
