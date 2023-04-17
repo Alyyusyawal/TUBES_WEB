@@ -1,21 +1,28 @@
 <?php
 
-use App\Http\Controllers\umum;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\AdminController;
 
-Route::get('/umums/create',[umum::class,'create'])
-    ->name('umums.create');
-Route::post('/umums',[umum::class,'store'])
-    ->name('umums.store');
-Route::get('umums/{mahasiswa}',[umum::class,'show'])
-    ->name('umums.show');
-Route::get('umums/{mahasiswa}/edit',[umum::class,'edit'])
-    ->name('umums.edit');
-Route::patch('umums/{mahasiswa}',[umum::class,'update'])
-    ->name('umums.update');
-Route::delete('umums/{mahasiswa}',[umum::class,'destroy'])
-    ->name('umums.destroy');
+Route::get('/admins',[AdminController::class,'index'])
+    ->name('admins.index');
+Route::get('/admins/create',[AdminController::class,'create'])
+    ->name('admins.create');
+Route::post('/admins',[AdminController::class,'store'])
+    ->name('admins.store');
+Route::get('admins/{signup}',[AdminController::class,'show'])
+    ->name('admins.show');
+Route::get('admins/{signup}/edit',[AdminController::class,'edit'])
+    ->name('admins.edit');
+Route::patch('admins/{signup}',[AdminController::class,'update'])
+    ->name('admins.update');
+Route::delete('admins/{signup}',[AdminController::class,'destroy'])
+    ->name('admins.destroy'); 
+
+
+
+
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes

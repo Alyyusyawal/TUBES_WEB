@@ -13,11 +13,11 @@ return new class extends Migration
     {
         Schema::create('signups', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->string('nama');
             $table->integer('NIM')->unique();
             $table->string('email')->unique();
-            $table->string('nama');
-            $table->string('role');
             $table->string('password');
+            $table->string('role');
             $table->timestamps();
         });
         
