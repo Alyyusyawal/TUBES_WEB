@@ -10,18 +10,16 @@ class umum extends Controller
     public function store(Request $request)
     {
         $validateData = $request->validate([
-            'nim'           => 'required|size:8|unique:mahasiswas,nim',
+            'NIM'           => 'required|size:8|unique:presensis,NIM',
             'nama'          => 'required|min:3|max:50',
-            'jenis_kelamin' => 'required|in:P,L',
-            'jurusan'       => 'required',
-            'alamat'        => '',
+            'kehadiran'     => 'required|in:H,A,S,I',
         ]);
         // dump($validateData);
         Mahasiswa::create($validateData);
         
         $request->session()->flash('pesan',"Penambahan data
         {$validateData['nama']} berhasil");
-        return redirect()->route('mahasiswas.index');
+        return redirect()->route('umums.index');
     }
     public function update(Request $request, Mahasiswa $mahasiswa)
     {

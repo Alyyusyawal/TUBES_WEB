@@ -1,23 +1,21 @@
 <?php
 
+use App\Http\Controllers\umum;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
-use App\Http\Controllers\MahasiswaController;
 
-Route::get('/mahasiswas',[MahasiswaController::class,'index'])
-    ->name('mahasiswas.index');
-Route::get('/mahasiswas/create',[MahasiswaController::class,'create'])
-    ->name('mahasiswas.create');
-Route::post('/mahasiswas',[MahasiswaController::class,'store'])
-    ->name('mahasiswas.store');
-Route::get('mahasiswas/{mahasiswa}',[MahasiswaController::class,'show'])
-    ->name('mahasiswas.show');
-Route::get('mahasiswas/{mahasiswa}/edit',[MahasiswaController::class,'edit'])
-    ->name('mahasiswas.edit');
-Route::patch('mahasiswas/{mahasiswa}',[MahasiswaController::class,'update'])
-    ->name('mahasiswas.update');
-Route::delete('mahasiswas/{mahasiswa}',[MahasiswaController::class,'destroy'])
-    ->name('mahasiswas.destroy');
+Route::get('/umums/create',[umum::class,'create'])
+    ->name('umums.create');
+Route::post('/umums',[umum::class,'store'])
+    ->name('umums.store');
+Route::get('umums/{mahasiswa}',[umum::class,'show'])
+    ->name('umums.show');
+Route::get('umums/{mahasiswa}/edit',[umum::class,'edit'])
+    ->name('umums.edit');
+Route::patch('umums/{mahasiswa}',[umum::class,'update'])
+    ->name('umums.update');
+Route::delete('umums/{mahasiswa}',[umum::class,'destroy'])
+    ->name('umums.destroy');
 /*
 |--------------------------------------------------------------------------
 | Web Routes

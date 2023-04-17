@@ -11,9 +11,9 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('sign-up', function (Blueprint $table) {
+        Schema::create('signups', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->integer('identity_number')->unique();
+            $table->integer('NIM')->unique();
             $table->string('email')->unique();
             $table->string('nama');
             $table->string('role');
@@ -21,20 +21,21 @@ return new class extends Migration
             $table->timestamps();
         });
         
-        Schema::create('sign-in', function (Blueprint $table) {
+        Schema::create('signins', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->integer('identity_number')->unique();
+            $table->integer('NIM')->unique();
             $table->string('email')->unique();
             $table->string('nama');
             $table->string('role');
             $table->string('status');
             $table->timestamps();
         });
-        Schema::create('presensi', function (Blueprint $table) {
+        Schema::create('presensis', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->integer('identity_number')->unique();
+            $table->integer('NIM')->unique();
             $table->string('email')->unique();
             $table->string('nama');
+            $table->string('kehadiran');
             $table->string('location');
             $table->timestamps();
         });
@@ -45,8 +46,8 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('sign-up');
-        Schema::dropIfExists('sign-in');
-        Schema::dropIfExists('presensi');
+        Schema::dropIfExists('signups');
+        Schema::dropIfExists('signins');
+        Schema::dropIfExists('presensis');
     }
 };

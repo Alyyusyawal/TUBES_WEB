@@ -86,7 +86,7 @@
         }        
     </script> --}}
 
-    <div class="container">
+    {{-- <div class="container">
       <div class="row justify-content-center">
         <div class="col-md-8">
           <form action="">
@@ -127,9 +127,72 @@
           </form>
         </div>
       </div>
+    </div> --}}
+
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-md-8">
+          <form action="{{ route('umums.store') }}" method="POST">
+          {{-- <form action="{{ route('umums.store') }}" method="POST"> --}}
+            @csrf
+            <h1 style="text-align: center">PRESENSI</h1>
+            <div class="mb-3">
+              <label for="nim">NIM</label>
+              <input type="text"
+              class="form-control @error('nim') is-invalid @enderror"
+              id="nim" name="nim" value="{{ old('nim') }}">
+              @error('nim')
+                <div class="text-danger">{{ $message }}</div>
+              @enderror
+                </div>
+            <div class="mb-3">
+              <label for="nama">Nama Lengkap</label>
+              <input type="text"
+              class="form-control @error('nama') is-invalid @enderror"
+              id="nama" name="nama" value="{{ old('nama') }}">
+              @error('nama')
+                <div class="text-danger">{{ $message }}</div>
+              @enderror
+                </div>
+                <div class="form-group">
+                  <label>Status Presensi</label>
+                  <div>
+                    <div class="form-check form-check-inline">
+                      <input class="form-check-input" type="radio" name="kehadiran"
+                      id="hadir" value="H"
+                      {{ old('kehadiran')=='H' ? 'checked': '' }} >
+                      <label class="form-check-label" for="hadir">Hadir</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                      <input class="form-check-input" type="radio" name="kehadiran"
+                      id="absen" value="A"
+                      {{ old('kehadiran')=='A' ? 'checked': '' }} >
+                      <label class="form-check-label" for="absen">Absen</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                      <input class="form-check-input" type="radio" name="kehadiran"
+                      id="sakit" value="S"
+                      {{ old('kehadiran')=='S' ? 'checked': '' }} >
+                      <label class="form-check-label" for="sakit">Sakit</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                      <input class="form-check-input" type="radio" name="kehadiran"
+                      id="izin" value="I"
+                      {{ old('kehadiran')=='I' ? 'checked': '' }} >
+                      <label class="form-check-label" for="izin">Izin</label>
+                    </div>
+                    @error('jenis_kelamin')
+                      <div class="text-danger">{{ $message }}</div>
+                    @enderror
+                  </div>
+                </div>
+            <button type="submit" class="btn btn-primary" id="submit-btn">Submit</button>
+          </form>
+        </div>
+      </div>
     </div>
     
-    <script src="assets/js/geo-min.js" type="text/javascript" charset="utf-8"></script>
+    {{-- <script src="assets/js/geo-min.js" type="text/javascript" charset="utf-8"></script>
     <script>
       const submitBtn = document.querySelector('#submit-btn');
     
@@ -161,7 +224,7 @@
           console.error('Error sending location data:', error);
         });
       }
-    </script>
+    </script> --}}
     
     
 @endsection
